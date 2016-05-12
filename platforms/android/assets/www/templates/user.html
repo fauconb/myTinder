@@ -1,0 +1,38 @@
+<ion-view view-title="User">
+<ion-content>
+
+ID: <input ng-model="user.id"/>
+{{user.id }}
+<br>
+
+Name: <input ng-model="user.name"/>
+{{user.name }}
+<br>
+
+Age: <input ng-model="user.age"/>
+{{user.age }}
+<br>
+
+Sexe: <input ng-model="user.sexe"/>
+{{user.sexe }}
+<br>
+
+<button ng-click="save()">Update</button>
+
+Random user: {{randomUser.name}}
+<button ng-click="like()">like</button>
+<button ng-click="dislike()">il est moche</button>
+
+Enter age to find: <form><input ng-model="searchAge"/>
+<button ng-click="search()">Find</button>
+</form>
+
+<ul>
+	<li ng-repeat="result in results">
+		{{result.name}}
+	</li> 
+</ul>
+
+</ion-content>
+</ion-view>
+

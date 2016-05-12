@@ -1,0 +1,17 @@
+<ion-view view-title="Like">
+  <ion-content>
+    <h1>Vos Likes</h1>
+    <ion-list>
+      <ion-item ng-repeat="like in liked">
+        <ion ng-repeat="user in alreadyVoted">
+          <ion ng-show="{{ like.user_id }} == {{ user.id }}">
+            {{user.name}} {{user.lastname}} - {{user.age}} ans
+            <button class="button button-assertive button-small" ng-click="deleteLike({{like.id}})"><i class="fa fa-ban"></i></button>
+          </ion>
+        </ion>
+      </ion-item>
+      <button ng-click="refreshList()">Refresh</button>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

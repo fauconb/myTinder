@@ -1,0 +1,28 @@
+<ion-view view-title="Cards">
+
+  <ion-header-bar class="bar-default">
+    <h1 class="title">TD Cards</h1>
+  </ion-header-bar>
+  <td-cards>
+    <td-card ng-repeat="card in cards" on-swipe-left="cardSwipedLeft($index)"
+             on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)"
+             class="card-{{$index}}">
+      <div class="image">
+        <div class="no-text">NOPE</div>
+        <img class="imgs" ng-src="{{card.image}}">
+        <p>{{card.name}} - {{card.age}} ans </p>
+        <p>{{card.sexe}} - {{card.id}}</p>
+        <div class="yes-text">LIKE</div>
+      </div>
+
+      <div class="likes">
+        <button class="button button-balanced" ng-click="cardSwipedRight($index)"><i class="fa fa-heart"></i></button>
+        <button class="button button-energized" ng-click="cardPauseVote($index)"><i class="fa fa-pause"></i></button>
+        <button class="button button-assertive" ng-click="cardSwipedLeft($index)"><i class="fa fa-ban"></i></button>
+      </div>
+
+    </td-card>
+
+  </td-cards>
+
+</ion-view>
